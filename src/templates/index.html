@@ -33,11 +33,11 @@
     <div class="div-block-3">
       <div class="div-block-2">
         <div>
-          <div id="icon-box" class="icon-box"><img src="{{url_for('static', filename='images/OPark.svg')}}images/" width="162" alt=""></div>
+          <div id="icon-box" class="icon-box"><img src="{{url_for('static', filename='images/OPark.svg')}}" width="162" alt=""></div>
         </div>
         <h1 id="username" class="heading-2">Hi Kate,</h1>
         <h1 id="greeting" class="heading content-small">Welcome to<br><strong>Olympic Park</strong></h1>
-      </div><img src="{{url_for('static', filename='images/Olympic-Park-1.png')}}" srcset="images/Olympic-Park-1-p-500.png 500w, images/Olympic-Park-1-p-800.png 800w, images/Olympic-Park-1-p-1080.png 1080w, images/Olympic-Park-1.png 1500w" sizes="(max-width: 1500px) 100vw, 1500px" alt="" class="image"></div>
+      </div><img src="{{url_for('static', filename='images/Olympic-Park-1.png')}}" srcset="{{url_for('static', filename='images/Olympic-Park-1-p-500.png')}} 500w, {{url_for('static', filename='images/Olympic-Park-1-p-800.png')}} 800w, {{url_for('static', filename='images/Olympic-Park-1-p-1080.png')}} 1080w, {{url_for('static', filename='images/Olympic-Park-1.png 1500w')}}" sizes="(max-width: 1500px) 100vw, 1500px" alt="" class="image"></div>
     <div class="div-block-6">
       <div class="div-block-7">
         <h1 class="heading-3" style="font-size:15px">Homage To The Athletes</h1>
@@ -60,7 +60,7 @@
       </div>
     </div>
   </div>
-  <script src="{{url_for('static', filename='https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js')}}" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="{{url_for('static', filename='js/webflow.js')}}" type="text/javascript"></script>
   <script src="{{url_for('static', filename='js/visual-controls.js')}}"></script>
 
