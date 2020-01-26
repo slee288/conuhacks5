@@ -48,7 +48,7 @@ def db_init():
             '''
 
 
-        "INSERT INTO songs (name, timeZone) VALUES ({0}, {1})".format("Homage_To_The_Athletes_Opening_Ceremony_Soundtrack.wav", "morning")
+        insert_song = "INSERT INTO songs (name, timeZone) VALUES ({0}, {1})".format("Homage_To_The_Athletes_Opening_Ceremony_Soundtrack.wav", "morning")
         "INSERT INTO songs (name, timeZONE) VALUES ({0}, {1})".format("Farewell_Song_&_Ballet_of_the_Closing_Ceremony.wav", "evening")
         # geo_locations = '''
         #         INSERT INTO locations (name, latitude, longitude, radius, songName) VALUES
@@ -57,7 +57,7 @@ def db_init():
 
         cur.execute(location)
         cur.execute(song)
-        # mysql.connection.commit()
+        mysql.connection.commit()
         cur.close()
     except Exception as e:
         app.logger.error(e)
