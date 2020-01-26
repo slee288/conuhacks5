@@ -48,8 +48,10 @@ def db_init():
             '''
 
 
-        insert_song = "INSERT INTO songs (name, timeZone) VALUES ({0}, {1})".format("Homage_To_The_Athletes_Opening_Ceremony_Soundtrack.wav", "morning")
-        "INSERT INTO songs (name, timeZONE) VALUES ({0}, {1})".format("Farewell_Song_&_Ballet_of_the_Closing_Ceremony.wav", "evening")
+        insert_song = '''
+                    insert into songs (name, timeZone) values ("Homage_To_The_Athletes_Opening_Ceremony_Soundtrack.wav", "morning"),
+                    ("Farewell_Song_&_Ballet_of_the_Closing_Ceremony.wav", "evening")
+                    '''
         # geo_locations = '''
         #         INSERT INTO locations (name, latitude, longitude, radius, songName) VALUES
         #         ()
