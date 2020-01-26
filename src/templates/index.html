@@ -11,10 +11,17 @@
   <script type="text/javascript">
       function toggle_pause(){
           if(document.getElementById("pause_button").src.includes("Pause.svg")){
-              // document.getElementById("pause_button").src = "images/Play.svg";
               document.getElementById("pause_button").src = "{{url_for('static', filename='images/Play.svg')}}";
+              $.ajax({
+                type:"POST",
+                url:"/pause"
+              })
           }else{
               document.getElementById("pause_button").src = "{{url_for('static', filename='images/Pause.svg')}}";
+              $.ajax({
+                type:"POST",
+                url:"/unpause"
+              })
           }
       }
 
