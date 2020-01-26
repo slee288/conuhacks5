@@ -38,17 +38,31 @@ def db_init():
                     bgm VARCHAR(100) NOT NULL
                 );
             '''
+
+        song = '''
+                CREATE TABLE IF NOT EXISTS songs (
+                    id INT(6) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+                    name VARCHAR(20) NOT NULL,
+                    timeZone ENUM("morning", "night")
+                );
+            '''
+
+            # "INSERT INTO songs (name, timeZone) VALUES ({0}, {1})".format("title", "morning / evening")
         # geo_locations = '''
         #         INSERT INTO locations (name, latitude, longitude, radius, songName) VALUES
         #         ()
         #     '''
 
         cur.execute(location)
+        cur.execute(song)
         # mysql.connection.commit()
         cur.close()
     except Exception as e:
         app.logger.error(e)
 
+@app.route("/mont-royal", methods=["GET"])
+def mont():
+    return render_template("mont-royal.html")
 
 @app.route('/play', methods=['POST'])
 def play():
