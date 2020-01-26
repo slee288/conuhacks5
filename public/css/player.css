@@ -1,0 +1,35 @@
+.slider {
+  width: 232px;
+  height: 5px;
+  background: #ffffff;
+  outline: none;
+  opacity: 0.7;
+  border-radius:5px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius:200px;
+  background: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+
+.player_button{
+    margin:10px;
+}
