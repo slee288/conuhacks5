@@ -20,7 +20,8 @@
               document.getElementById("pause_button").src = "{{url_for('static', filename='images/Pause.svg')}}";
               $.ajax({
                 type:"POST",
-                url:"/unpause"
+                // url:"/unpause"
+                url: "/play?name=" + "Homage_To_The_Athletes_Opening_Ceremony_Soundtrack.wav"
               })
           }
       }

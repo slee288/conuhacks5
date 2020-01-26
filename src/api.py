@@ -76,14 +76,14 @@ def stop():
 @app.route('/pause', methods=['POST'])
 def pause():
     player.pause()
-
+    print("paused")
     return make_response('Paused', 200)
 
 
 @app.route('/unpause', methods=['POST'])
 def unpause():
     player.unpause()
-
+    print("playing")
     return make_response('Unpaused', 200)
 
 
@@ -103,3 +103,10 @@ def download():
         player.download(request.args['url'])
 
         return make_response('Downloaded file', request.args['url'])
+
+
+# Receives Geo_Location
+@app.route("/loc", methods=["POST"])
+def loca():
+    data = request.json
+    return data
