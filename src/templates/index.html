@@ -9,6 +9,14 @@
   <meta content="Webflow" name="generator">
 
   <script type="text/javascript">
+      function toggle_stop() {
+          $.ajax({
+              type: 'POST',
+              url: "/loc"
+              // url: "/stop"
+          });
+      }
+
       function toggle_pause(){
           if(document.getElementById("pause_button").src.includes("Pause.svg")){
               document.getElementById("pause_button").src = "{{url_for('static', filename='images/Play.svg')}}";
@@ -22,6 +30,22 @@
                 type:"POST",
                 // url:"/unpause"
                 url: "/play?name=" + "pink-panther.wav"
+              })
+          }
+      }
+
+      function toggle_rewind(){
+          if(document.getElementById("skip_button").src.includes("RewindNot.svg")){
+              document.getElementById("skip_button").src = "{{url_for('static', filename='images/Rewind.svg')}}";
+              $.ajax({
+                type:"POST",
+                url:"/rewind"
+              })
+          }else{
+              document.getElementById("skip_button").src = "{{url_for('static', filename='images/RewindNot.svg')}}";
+              $.ajax({
+                type:"POST",
+                url:"/no_rewind"
               })
           }
       }
@@ -86,14 +110,14 @@
       <div class="div-block-7">
         <h1 class="heading-3" style="font-size:15px">Homage To The Athletes</h1>
         <div class="div-block-9">
-          <a href="#" class="player_button">
+          <a href="#" onclick="toggle_stop()" class="player_button">
             <img id="exit_button" src="{{url_for('static', filename='images/Exit.svg')}}">
           </a>
           <a href="#" onclick="toggle_pause()" class="player_button">
             <img id="pause_button" src="{{url_for('static', filename='images/Pause.svg')}}">
           </a>
-          <a href="#" class="player_button">
-            <img id="skip_button" src="{{url_for('static', filename='images/Skip.svg')}}">
+          <a href="#" onclick="toggle_rewind()" class="player_button">
+            <img id="skip_button" src="{{url_for('static', filename='images/RewindNot.svg')}}">
           </a>
         </div>
         <div class="div-block-10"><img src="{{url_for('static', filename='images/Volume.svg')}}" alt="" class="image-2">

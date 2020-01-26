@@ -8,7 +8,7 @@
 // }
 //
 function update(){
-    # Updating time from frontend
+    //Updating time from frontend
     setInterval(function(){
         var today = new Date();
 
@@ -28,9 +28,7 @@ function update(){
         }
 
         document.getElementById("time").innerHTML = hour + ":" + min + ap;
-    })
 
-    setInterval(function(){
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(postPosition);
         }else{
@@ -43,11 +41,30 @@ function update(){
                 url:"/loc",
                 data:{
                     "latitude":position.coords.latitude,
-                    "longitude":position.coords.longitude
+                    "longitude":position.coords.longitude,
+                    "curr_time": hour
                 }
             })
         }
+    }, 10000)
 
-    })
+    setInterval(function(){
+        // if(navigator.geolocation){
+        //     navigator.geolocation.getCurrentPosition(postPosition);
+        // }else{
+        //     console.log("Geolocation is not available in this browser");
+        // }
+        //
+        // function postPosition(position){
+        //     $.ajax({
+        //         type:"POST",
+        //         url:"/loc",
+        //         data:{
+        //             "latitude":position.coords.latitude,
+        //             "longitude":position.coords.longitude
+        //         }
+        //     })
+        // }
+
+    }, 10000)
 }
-
