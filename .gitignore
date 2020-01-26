@@ -2,7 +2,7 @@ music/*
 conf/*
 .vagrant/
 src/ubuntu-bionic-18.04-cloudimg-console.log
-src/__pycache/
+src/__pycache__/
 Dockerfile
 requirements.txt
 ubuntu-bionic-18.04-cloudimg-console.log

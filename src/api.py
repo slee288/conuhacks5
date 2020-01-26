@@ -1,4 +1,4 @@
-from flask import Flask, make_response, request
+from flask import Flask, make_response, request, render_template
 from player import Player
 from flask_mysqldb import MySQL
 
@@ -19,7 +19,7 @@ mysql = MySQL(app)
 @app.route("/", methods=['GET'])
 def home():
     db_init()
-    return "DONE!"
+    return render_template("index.html")
 
 def db_init():
     try:
