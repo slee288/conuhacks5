@@ -29,3 +29,4 @@ function update_time(){
         document.getElementById("time").innerHTML = hour + ":" + min + ap;
     })
 }
+
