@@ -7,6 +7,42 @@
   <title>ConUHacks</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
+
+  <script type="text/javascript">
+      function toggle_pause(){
+          if(document.getElementById("pause_button").src.includes("Pause.svg")){
+              // document.getElementById("pause_button").src = "images/Play.svg";
+              document.getElementById("pause_button").src = "{{url_for('static', filename='images/Play.svg')}}";
+          }else{
+              document.getElementById("pause_button").src = "{{url_for('static', filename='images/Pause.svg')}}";
+          }
+      }
+
+      // function update_time(){
+      //     setInterval(function(){
+      //         var today = new Date();
+      //
+      //         var ap = "AM";
+      //         var hour = today.getHours();
+      //         var min = today.getMinutes();
+      //
+      //         if(min < 10){
+      //             min = "0" + min;
+      //         }
+      //
+      //         if(hour >= 12 && hour <= 23){
+      //             ap = " PM";
+      //             if(hour > 12) hour = hour % 12;
+      //         }else{
+      //             if(hour > 12) hour = hour - 12;
+      //         }
+      //
+      //         document.getElementById("time").innerHTML = hour + ":" + min + ap;
+      //     })
+      // }
+  </script>
+
+
   <link href="{{url_for('static', filename ='css/normalize.css')}}" rel="stylesheet" type="text/css">
   <link href="{{url_for('static', filename = 'css/webflow.css')}}" rel="stylesheet" type="text/css">
   <link href="{{url_for('static', filename = 'css/conuhacks.webflow.css')}}" rel="stylesheet" type="text/css">

@@ -32,7 +32,10 @@ def db_init():
                     latitude FLOAT NOT NULL,
                     longitude FLOAT NOT NULL,
                     radius FLOAT NOT NULL,
-                    songName VARCHAR(20) NOT NULL
+                    songName VARCHAR(20) NOT NULL,
+                    mainIcon VARCHAR(100) NOT NULL,
+                    bgp VARCHAR(100) NOT NULL,
+                    bgm VARCHAR(100) NOT NULL
                 );
             '''
         # geo_locations = '''

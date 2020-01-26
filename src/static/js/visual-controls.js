@@ -1,11 +1,12 @@
-function toggle_pause(){
-    if(document.getElementById("pause_button").src.includes("Pause.svg")){
-        document.getElementById("pause_button").src = "images/Play.svg";
-    }else{
-        document.getElementById("pause_button").src = "images/Pause.svg";
-    }
-}
-
+// function toggle_pause(){
+//     if(document.getElementById("pause_button").src.includes("Pause.svg")){
+//         // document.getElementById("pause_button").src = "images/Play.svg";
+//         document.getElementById("pause_button").src = "{{url_for('static', filename='images/Play.svg')}}";
+//     }else{
+//         document.getElementById("pause_button").src = "images/Pause.svg";
+//     }
+// }
+//
 function update_time(){
     setInterval(function(){
         var today = new Date();
@@ -28,4 +29,3 @@ function update_time(){
         document.getElementById("time").innerHTML = hour + ":" + min + ap;
     })
 }
-
